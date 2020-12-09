@@ -1,0 +1,8 @@
+Regarding the Python task, I have developed a Django application for report generation deployed on AWS using Docker. I have used Django for the frontend and the database infrastructure and Airflow pipelines for regularly scheduling the report generation at the required time intervals. The README.md file includes further details of the project and the code structure.
+
+The platform can be accessed at http://34.222.155.38:8000/books/upload/
+Inputs are name, email and the 3 raw data files provided for the assessment (attached below)
+
+The dashboard of the generated reports can be accessed at http://34.222.155.38:8000/media/
+
+The final data summary and EDA reports can be accessed from the dashboard
