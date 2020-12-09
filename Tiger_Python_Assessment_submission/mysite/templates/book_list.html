@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+    <h4>Summary Dashboard</h4>
+    <p style="text-align:right">
+      <a href="{% url 'upload_book' %}" class="btn btn-primary">Upload data</a>
+    </p>
+  {% endblock %}
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th style="text-align:center">S.No.</th>
+        <th style="text-align:center">Name</th>
+        <th style="text-align:center">Email</th>
+        <th style="text-align:center">chicago_collision_data</th>
+        <th style="text-align:center">flight_call</th>
+        <th style="text-align:center">light_levels</th>        
+        <th style="text-align:center">Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td style="text-align:center">{{ book.id }}</td>
+          <td style="text-align:center">{{ book.full_name }}</td>
+          <td style="text-align:center">{{ book.email }}</td>
+          <td style="text-align:center">
+            <a href="{{ book.html_chicago_collision_data }}" class="btn btn-primary btn-sm" target="_blank" align="center">
+              Report
+            </a>
+          </td>
+          <td style="text-align:center">
+            <a href="{{ book.html_flight_call }}" class="btn btn-primary btn-sm" target="_blank" align="center">
+              Report
+            </a>
+          </td>
+          <td style="text-align:center">
+            <a href="{{ book.html_light_levels }}" class="btn btn-primary btn-sm" target="_blank" align="center">
+              Report
+            </a>
+          </td>
+          <td style="text-align:center">
+            <a href="{{ book.html_chicago_collision_data_merged }}" class="btn btn-primary btn-sm" target="_blank" align="center">
+              Report
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
